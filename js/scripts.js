@@ -54,11 +54,19 @@ $(document).ready(function(){
     var guessedLetter = ($('input#userLetter').val()).toLowerCase();
     $("#listLetters").append('<li>' + guessedLetter + '</li>');
     $("#userLetter").val('');
-    //ADD CHECKING OF GUESSED LETTER AGAINST TARGET WORD HERE
+    var momentOfTruth = findLetter(guessedLetter, targetWord); // CHECK RANDOM WORD VS GUESSED LETTER
+    if (momentOfTruth === false){
+      $("#displayHangman").append('<h4>' + targetWord.hangedManPart() + '</h4>');
+      targetWord.wrong();
+    } else {
+      momentOfTruth.forEach(function(moment) {
+
+        alert(targetWord.word[moment]);
+      });
+    }
     // ADD IF/ELSE FOR CORRECT/INCORRECT GUESS
     // ADD REVEAL OR WRITING OF CORRECT LETTER
-    //REVEAL OF BODY PART ON HANGMAN
-    $("#displayHangman").append('<h4>' + targetWord.bodyParts[targetWord.wrongGuess]);
+
   }); // END LETTER GUESSING FUNCTION
 
 }); //END DOCUMENT READY FUNCTION
