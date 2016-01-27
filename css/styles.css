@@ -3,3 +3,10 @@
   border-style: solid;
   border-color: red;
 }
+
+td {
+  border: 1px;
+  border-style: solid;
+  border-color: purple;
+  text-align: center;
+}

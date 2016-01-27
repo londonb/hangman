@@ -42,10 +42,14 @@ var randomWord = function(){
 $(document).ready(function(){
   var targetword;
   $("button#start").click(function() {
+    $('#displayWord').empty();
     targetWord = new Game(randomWord());
     console.log(targetWord);
-    $("#displayWord").append('<span class="displaybox">' + targetWord.word[0] + '</span>'); //TEMP - loop
-    $("#displayWord").append('<span class="displaybox">' + targetWord.word[1] + '</span>'); //TEMP - loop
+
+    for (var i=0; i < targetWord.word.length; i ++) {
+      $("#displayWord").append('<td id="space' + i + '"> ? </td>');
+    }
+
     // ADD RESET FOR PAGE ON SECOND CLICK?? SOMETHING??
   }); // END ACTION FROM PRESSING START/RESTART BUTTON
 
@@ -64,7 +68,7 @@ $(document).ready(function(){
         alert(targetWord.word[moment]);
       });
     }
-    // ADD IF/ELSE FOR CORRECT/INCORRECT GUESS
+
     // ADD REVEAL OR WRITING OF CORRECT LETTER
 
   }); // END LETTER GUESSING FUNCTION
