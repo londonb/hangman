@@ -40,18 +40,25 @@ var randomWord = function(){
 // END BUSINESS LOGIC
 
 $(document).ready(function(){
+  var targetword;
   $("button#start").click(function() {
-    var targetWord = randomWord();
+    targetWord = new Game(randomWord());
     console.log(targetWord);
-    $("#displayWord").html('<h3>' + targetWord + '</h3>');
+    $("#displayWord").append('<span class="displaybox">' + targetWord.word[0] + '</span>'); //TEMP - loop
+    $("#displayWord").append('<span class="displaybox">' + targetWord.word[1] + '</span>'); //TEMP - loop
+    // ADD RESET FOR PAGE ON SECOND CLICK?? SOMETHING??
   }); // END ACTION FROM PRESSING START/RESTART BUTTON
 
   $('form#chooseLetter').submit(function(event) {
     event.preventDefault();
-    console.log("submitted!");
     var guessedLetter = ($('input#userLetter').val()).toLowerCase();
-    console.log(guessedLetter);
-
+    $("#listLetters").append('<li>' + guessedLetter + '</li>');
+    $("#userLetter").val('');
+    //ADD CHECKING OF GUESSED LETTER AGAINST TARGET WORD HERE
+    // ADD IF/ELSE FOR CORRECT/INCORRECT GUESS
+    // ADD REVEAL OR WRITING OF CORRECT LETTER
+    //REVEAL OF BODY PART ON HANGMAN
+    $("#displayHangman").append('<h4>' + targetWord.bodyParts[targetWord.wrongGuess]);
   }); // END LETTER GUESSING FUNCTION
 
 }); //END DOCUMENT READY FUNCTION
