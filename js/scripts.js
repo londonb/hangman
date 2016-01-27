@@ -37,3 +37,8 @@ var randomWord = function(){
   console.log(randomNumber, possibleWords[randomNumber]);
   return possibleWords[randomNumber];
 }
+// END BUSINESS LOGIC
+
+$(document).ready(function(){
+  
+}); //END DOCUMENT READY FUNCTION

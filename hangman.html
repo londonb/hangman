@@ -6,9 +6,40 @@
     <link href="css/styles.css" rel="stylesheet" type="text/css">
     <script src="js/jquery-1.12.0.js"></script>
     <script src="js/scripts.js"></script>
-    <title></title>
+    <title>Hangman</title>
   </head>
   <body>
+    <div class="container">
+      <div class="jumbotron">
+        <h1>Play Hangman!</h1>
+      </div>
 
+      <div class="row">
+        <div class="col-sm-4">
+          <div class="displaybox" id="displayHangman">
+            <h2>hangman image</h2>
+          </div>
+        </div><!--END TOP LEFT COLUMN-->
+        <div class="col-sm-8">
+          <div class="displaybox" id="displayWord">
+            <h2>Blanks for word</h2>
+          </div>
+        </div><!--END TOP RIGHT COLUMN-->
+      </div><!--END FIRST ROW -->
+
+      <div class="row">
+        <div class="col-sm-6">
+          <div class="displaybox" id="pickLetters">
+            <h2>Choose letters here</h2>
+          </div>
+        </div><!--END bottom LEFT COLUMN-->
+        <div class="col-sm-6">
+          <div class="displaybox" id="showUsedLetters">
+            <h2>Prior guesses here</h2>
+          </div>
+        </div><!--END bottom RIGHT COLUMN-->
+      </div><!--END second ROW -->
+
+    </div> <!--END MAIN BODY CONTAINER-->
   </body>
 </html>
