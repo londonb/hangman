@@ -13,3 +13,14 @@ Game.prototype.wrong = function() {
   this.wrongGuess = this.wrongGuess +1;
   return this.wrongGuess;
 }
+
+var findLetter = function(guess, selectedWord) {
+  var foundLetter = false;
+  for (var i = 0; i < selectedWord.word.length; i++) {
+    if (selectedWord.word[i] === guess) {
+      //do a thing
+      foundLetter = true;
+    }
+  }
+  return foundLetter;
+}

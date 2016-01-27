@@ -19,3 +19,10 @@ describe('Game', function() {
     expect(testGame.hangedManPart()).to.equal('left arm');
   });
 });
+
+describe('findLetter', function() {
+  it('will search the Game.word for a specified guessed letter and return false if not found', function(){
+    var testGame = new Game("falafel");
+    expect(findLetter('r', testGame)).to.equal(false);
+  });
+});
