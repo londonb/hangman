@@ -5,6 +5,10 @@ function Game(randomWord) {
   this.bodyParts = ['head', 'chest', 'left arm', 'right arm', 'hips', 'left leg', 'right leg'];
 }
 
+Game.prototype.hangedManPart = function() {
+  return this.bodyParts[this.wrongGuess];
+}
+
 Game.prototype.wrong = function() {
   this.wrongGuess = this.wrongGuess +1;
   return this.wrongGuess;

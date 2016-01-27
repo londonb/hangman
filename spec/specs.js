@@ -10,6 +10,12 @@ describe('Game', function() {
   it('will increment the wrong guess counter', function() {
     var testGame = new Game("javascript");
     expect(testGame.wrong()).to.equal(1);
-    console.log(testGame);
-  })
+  });
+
+  it('will retrieve the name of the body part equivalent to the wrong guess', function(){
+    var testGame = new Game("javascript");
+    testGame.wrong();
+    testGame.wrong();
+    expect(testGame.hangedManPart()).to.equal('left arm');
+  });
 });
