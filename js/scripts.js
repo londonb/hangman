@@ -28,5 +28,11 @@ var findLetter = function(guess, selectedWord) {
   } else {
     return letterLocations;
   }
+}
 
+var randomWord = function(){
+  var possibleWords = ['markdown', 'block', 'javascript', 'cascading', 'responsive', 'looping', 'branching', 'manipulation', 'attributes', 'bootstrap'];
+  var randomNumber = Math.floor(Math.random() * (possibleWords.length));
+  console.log(randomNumber, possibleWords[randomNumber]);
+  return possibleWords[randomNumber];
 }

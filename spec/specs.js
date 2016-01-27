@@ -31,3 +31,9 @@ describe('findLetter', function() {
     expect(findLetter('f', testGame)).to.eql([0,4]);
   });
 });
+
+describe('randomWord', function() {
+  it('will randomly select a word from a pre-set array and return it as a string', function() {
+    expect(randomWord()).to.be.a('string');
+  });
+});
