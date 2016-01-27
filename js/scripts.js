@@ -3,5 +3,9 @@ function Game(randomWord) {
   this.wrongGuess = 0;
   this.usedLetters = [];
   this.bodyParts = ['head', 'chest', 'left arm', 'right arm', 'hips', 'left leg', 'right leg'];
+}
 
+Game.prototype.wrong = function() {
+  this.wrongGuess = this.wrongGuess +1;
+  return this.wrongGuess;
 }

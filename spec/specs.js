@@ -6,4 +6,10 @@ describe('Game', function() {
     expect(testGame.usedLetters).to.eql([]);
     expect(testGame.bodyParts).to.eql(['head', 'chest', 'left arm', 'right arm', 'hips', 'left leg', 'right leg']);
   });
+
+  it('will increment the wrong guess counter', function() {
+    var testGame = new Game("javascript");
+    expect(testGame.wrong()).to.equal(1);
+    console.log(testGame);
+  })
 });
