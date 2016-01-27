@@ -25,4 +25,9 @@ describe('findLetter', function() {
     var testGame = new Game("falafel");
     expect(findLetter('r', testGame)).to.equal(false);
   });
+
+  it('will search the Game.word for a specified guessed letter and return an array with the locations of that letter', function() {
+    var testGame = new Game("falafel");
+    expect(findLetter('f', testGame)).to.eql([0,4]);
+  });
 });

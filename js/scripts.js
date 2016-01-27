@@ -16,11 +16,17 @@ Game.prototype.wrong = function() {
 
 var findLetter = function(guess, selectedWord) {
   var foundLetter = false;
+  var letterLocations = [];
   for (var i = 0; i < selectedWord.word.length; i++) {
     if (selectedWord.word[i] === guess) {
-      //do a thing
+      letterLocations.push(i);
       foundLetter = true;
     }
   }
-  return foundLetter;
+  if (foundLetter === false) {
+    return foundLetter;
+  } else {
+    return letterLocations;
+  }
+
 }
