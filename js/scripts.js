@@ -2,6 +2,7 @@ function Game(randomWord) {
   this.word = randomWord;
   this.wrongGuess = 0;
   this.usedLetters = [];
+  this.rightGuess = this.word.length;
   this.bodyParts = ['head', 'chest', 'left arm', 'right arm', 'hips', 'left leg', 'right leg'];
 }
 
@@ -12,6 +13,11 @@ Game.prototype.hangedManPart = function() {
 Game.prototype.wrong = function() {
   this.wrongGuess = this.wrongGuess +1;
   return this.wrongGuess;
+}
+
+Game.prototype.correct = function() {
+  this.rightGuess = this.rightGuess - 1;
+  return this.rightGuess;
 }
 
 var findLetter = function(guess, selectedWord) {
@@ -56,7 +62,7 @@ $(document).ready(function(){
   $('form#chooseLetter').submit(function(event) {
     event.preventDefault();
     var guessedLetter = ($('input#userLetter').val()).toLowerCase();
-    // CHECK IF ENTERED LETTER IS A DUPLICATE
+    // CHECK IF ENTERED LETTER IS A DUPLICATE OR MULTIPLE
     $("#listLetters").append('<li>' + guessedLetter + '</li>');
     $("#userLetter").val('');
     var momentOfTruth = findLetter(guessedLetter, targetWord); // CHECK RANDOM WORD VS GUESSED LETTER
@@ -66,11 +72,20 @@ $(document).ready(function(){
     } else {
       momentOfTruth.forEach(function(moment) { // moment is a number equal to the index location of a letter
         $('#space' + moment).html("<strong>" + targetWord.word[moment] + "</strong>");
+        targetWord.correct();
       });
     }
     console.log(targetWord);
     console.log(targetWord.usedLetters);
+
+    if (targetWord.rightGuess === 0) {
+      alert("You won");
+    }
+
     if (targetWord.wrongGuess >= 7) {
+      for (var i = 0; i < targetWord.word.length; i ++ ){
+        $('#space' + i).html("<strong>" + targetWord.word[i] + "</strong>");
+      }
       alert('GAME OVER!!!!'); //make more interesting
     }
 

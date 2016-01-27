@@ -18,6 +18,17 @@ describe('Game', function() {
     testGame.wrong();
     expect(testGame.hangedManPart()).to.equal('left arm');
   });
+
+  it('will determine the number of letters that are remaining to disclose', function() {
+    var testGame = new Game("javascript");
+    expect(testGame.rightGuess).to.equal(10);
+  });
+
+  it('will decrease the number of letters that are remaining to disclose', function() {
+    var testGame = new Game("javascript");
+    expect(testGame.correct()).to.equal(9);
+  });
+
 });
 
 describe('findLetter', function() {
