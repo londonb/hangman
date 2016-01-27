@@ -40,5 +40,9 @@ var randomWord = function(){
 // END BUSINESS LOGIC
 
 $(document).ready(function(){
-  
+  $("button#start").click(function() {
+    var targetWord = randomWord();
+    console.log(targetWord);
+    $("#displayWord").html('<h3>' + targetWord + '</h3>');
+  });
 }); //END DOCUMENT READY FUNCTION
