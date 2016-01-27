@@ -63,12 +63,11 @@ $(document).ready(function(){
       $("#displayHangman").append('<h4>' + targetWord.hangedManPart() + '</h4>');
       targetWord.wrong();
     } else {
-      momentOfTruth.forEach(function(moment) {
-
-        alert(targetWord.word[moment]);
+      momentOfTruth.forEach(function(moment) { // moment is a number equal to the index location of a letter
+        $('#space' + moment).html("<strong>" + targetWord.word[moment] + "</strong>");
       });
     }
-
+    console.log(targetWord.usedLetters);
     // ADD REVEAL OR WRITING OF CORRECT LETTER
 
   }); // END LETTER GUESSING FUNCTION
