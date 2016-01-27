@@ -56,6 +56,7 @@ $(document).ready(function(){
   $('form#chooseLetter').submit(function(event) {
     event.preventDefault();
     var guessedLetter = ($('input#userLetter').val()).toLowerCase();
+    // CHECK IF ENTERED LETTER IS A DUPLICATE
     $("#listLetters").append('<li>' + guessedLetter + '</li>');
     $("#userLetter").val('');
     var momentOfTruth = findLetter(guessedLetter, targetWord); // CHECK RANDOM WORD VS GUESSED LETTER
@@ -67,8 +68,13 @@ $(document).ready(function(){
         $('#space' + moment).html("<strong>" + targetWord.word[moment] + "</strong>");
       });
     }
+    console.log(targetWord);
     console.log(targetWord.usedLetters);
-    // ADD REVEAL OR WRITING OF CORRECT LETTER
+    if (targetWord.wrongGuess >= 7) {
+      alert('GAME OVER!!!!'); //make more interesting
+    }
+
+    // CHECK TOTAL NUMBER OF GUESSES AND CALL END GAME ROUTINE IF =>7
 
   }); // END LETTER GUESSING FUNCTION
 
