@@ -17,6 +17,7 @@ Game.prototype.wrong = function() {
 var findLetter = function(guess, selectedWord) {
   var foundLetter = false;
   var letterLocations = [];
+  selectedWord.usedLetters.push(guess);
   for (var i = 0; i < selectedWord.word.length; i++) {
     if (selectedWord.word[i] === guess) {
       letterLocations.push(i);

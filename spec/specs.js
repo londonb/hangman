@@ -30,6 +30,14 @@ describe('findLetter', function() {
     var testGame = new Game("falafel");
     expect(findLetter('f', testGame)).to.eql([0,4]);
   });
+
+  it('will add guessed letters to the usedLetters array', function() {
+    var testGame = new Game("falafel");
+    findLetter('r', testGame);
+    findLetter('f', testGame);
+    findLetter('s', testGame);
+    expect(testGame.usedLetters).to.eql(['r', 'f', 's']);
+  });
 });
 
 describe('randomWord', function() {
