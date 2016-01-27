@@ -32,11 +32,21 @@
         <div class="col-sm-6">
           <div class="displaybox" id="pickLetters">
             <h2>Choose letters here</h2>
+            <form id="chooseLetter">
+              <div class="form-group">
+                <label for="userLetter">Choose a Letter</label>
+                <input type="text" class="form-control" id="userLetter">
+              </div>
+              <button type="submit" class="btn btn-danger" id="guessLetter">Guess!</button>
+            </form>
           </div>
         </div><!--END bottom LEFT COLUMN-->
         <div class="col-sm-6">
           <div class="displaybox" id="showUsedLetters">
             <h2>Prior guesses here</h2>
+            <ul id="listLetters">
+
+            </ul>
           </div>
         </div><!--END bottom RIGHT COLUMN-->
       </div><!--END second ROW -->

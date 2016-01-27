@@ -44,5 +44,14 @@ $(document).ready(function(){
     var targetWord = randomWord();
     console.log(targetWord);
     $("#displayWord").html('<h3>' + targetWord + '</h3>');
-  });
+  }); // END ACTION FROM PRESSING START/RESTART BUTTON
+
+  $('form#chooseLetter').submit(function(event) {
+    event.preventDefault();
+    console.log("submitted!");
+    var guessedLetter = ($('input#userLetter').val()).toLowerCase();
+    console.log(guessedLetter);
+
+  }); // END LETTER GUESSING FUNCTION
+
 }); //END DOCUMENT READY FUNCTION
