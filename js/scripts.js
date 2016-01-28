@@ -47,6 +47,8 @@ var randomWord = function(){
 
 $(document).ready(function(){
   var targetword;
+  var guessedLetter;
+
   $("button#start").click(function() {
     $('#displayWord').empty();
     targetWord = new Game(randomWord());
@@ -59,10 +61,10 @@ $(document).ready(function(){
     // ADD RESET FOR PAGE ON SECOND CLICK?? SOMETHING??
   }); // END ACTION FROM PRESSING START/RESTART BUTTON
 
-  $('form#chooseLetter').submit(function(event) {
-    event.preventDefault();
-    var guessedLetter = ($('input#userLetter').val()).toLowerCase();
-    // CHECK IF ENTERED LETTER IS A DUPLICATE OR MULTIPLE
+  $('#pickLetters').on('click', 'td', function() {
+    guessedLetter = $(this).text();
+    guessedLetter = guessedLetter.toLowerCase();
+    $(this).text('');
     $("#listLetters").append('<li>' + guessedLetter + '</li>');
     $("#userLetter").val('');
     var momentOfTruth = findLetter(guessedLetter, targetWord); // CHECK RANDOM WORD VS GUESSED LETTER
@@ -74,7 +76,7 @@ $(document).ready(function(){
         $('#space' + moment).html("<strong>" + targetWord.word[moment] + "</strong>");
         targetWord.correct();
       });
-    }
+    } // END LETTER GUESSING FUNCTION
     console.log(targetWord);
     console.log(targetWord.usedLetters);
 
@@ -87,10 +89,6 @@ $(document).ready(function(){
         $('#space' + i).html("<strong>" + targetWord.word[i] + "</strong>");
       }
       alert('GAME OVER!!!!'); //make more interesting
-    }
-
-    // CHECK TOTAL NUMBER OF GUESSES AND CALL END GAME ROUTINE IF =>7
-
-  }); // END LETTER GUESSING FUNCTION
-
+    } // CHECK TOTAL NUMBER OF GUESSES AND CALL END GAME ROUTINE IF =>7
+  });
 }); //END DOCUMENT READY FUNCTION

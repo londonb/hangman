@@ -1,12 +1,13 @@
 **1) Hangman game selects random word from set list (start small)
-2) Displays number of blanks equal to the number of letters in the word
--- 2b) Use a loop to generate the spaces, giving each one an id equal to its index position in the word (blank spot display = empty box???)
+**2) Displays number of blanks equal to the number of letters in the word
+**-- 2b) Use a loop to generate the spaces, giving each one an id equal to its index position in the word (blank spot display = empty box???)
 3) Displays an empty hanging tree
 4) Displays a hangman image that increases with each wrong guess (7 body parts)
-5) Allows the player to select from the alphabet - array or form
+**5) Allows the player to select from the alphabet - grid or form
 --5b) if form: Recognize if a letter has already been guessed - TBD: penalty? - also check for unexpected input (ie multiple letters)
+--5c) if grid: identifies correct letter to apply to remaining tasks
 **6) Find occurrences of player's letter in the random word;
---6b)if it's there, replace blanks with the letter and if not, move letter to used field and add body part to hanged man
+**--6b)if it's there, replace blanks with the letter and if not, move letter to used field and add body part to hanged man
 **7) Increment counter for each wrong guess
---7b) display "You lost" message after 7 -- potentially modal
-8) Button to start again (generate new word)
+**--7b) display "You lost" message after 7 -- potentially modal
+**8) Button to start again (generate new word)

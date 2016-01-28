@@ -26,7 +26,7 @@
             <h2>Guess this word:</h2>
             <table class="table table-bordered">
               <tbody id="displayWord">
-                
+
               </tbody>
             </table>
           </div>
@@ -37,13 +37,44 @@
         <div class="col-sm-6">
           <div class="displaybox" id="pickLetters">
             <h2>Choose letters here</h2>
-            <form id="chooseLetter">
-              <div class="form-group">
-                <label for="userLetter">Choose a Letter</label>
-                <input type="text" class="form-control" id="userLetter">
-              </div>
-              <button type="submit" class="btn btn-danger" id="guessLetter">Guess!</button>
-            </form>
+            <table class="table table-bordered" id="chooseLetter">
+              <tr id="vowels">
+                <td></td>
+                <td>A</td>
+                <td>E</td>
+                <td>I</td>
+                <td>O</td>
+                <td>U</td>
+                <td></td>
+              </tr>
+              <tr class="consonants">
+                <td>B</td>
+                <td>C</td>
+                <td>D</td>
+                <td>F</td>
+                <td>G</td>
+                <td>H</td>
+                <td>J</td>
+              </tr>
+              <tr class="consonants">
+                <td>K</td>
+                <td>L</td>
+                <td>M</td>
+                <td>N</td>
+                <td>P</td>
+                <td>Q</td>
+                <td>R</td>
+              </tr>
+              <tr class="consonants">
+                <td>S</td>
+                <td>T</td>
+                <td>V</td>
+                <td>W</td>
+                <td>X</td>
+                <td>Y</td>
+                <td>Z</td>
+              </tr>
+            </table>
           </div>
         </div><!--END bottom LEFT COLUMN-->
         <div class="col-sm-6">
