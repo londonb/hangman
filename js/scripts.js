@@ -53,7 +53,7 @@ $(document).ready(function(){
     $('#displayWord').empty();
     targetWord = new Game(randomWord());
     console.log(targetWord);
-
+    $('#displayHangman').html('<object width="400" height="300" data="img/fullhangman.html"></object>');
     for (var i=0; i < targetWord.word.length; i ++) {
       $("#displayWord").append('<td id="space' + i + '"> ? </td>');
     }

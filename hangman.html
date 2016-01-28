@@ -12,13 +12,17 @@
     <div class="container">
       <div class="jumbotron">
         <h1>Play Hangman!</h1>
+        <button type="button" class="btn btn-lg btn-danger"><a href="javascript:history.go(0)" id="restart">New Game</a></button>
         <button type="button" id="start" class="btn btn-lg">Start</button>
       </div>
 
       <div class="row">
         <div class="col-sm-4">
-          <div class="displaybox" id="displayHangman">
+          <div class="displaybox" >
             <h2>hangman image</h2>
+            <div id="displayHangman">
+
+            </div>
           </div>
         </div><!--END TOP LEFT COLUMN-->
         <div class="col-sm-8">

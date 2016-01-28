@@ -13,7 +13,7 @@ XXX--5b) if form: Recognize if a letter has already been guessed - TBD: penalty?
 **8) Button to start again (generate new word)
 
 To do (day 2):
-1) Reset letter grid and used letters list and hangman image after win/loss
+**1) Reset letter grid and used letters list and hangman image after win/loss
 2) Actual hangman image!!!
 3) Add modal for win/loss?
 4) General layout cleanup

@@ -9,3 +9,7 @@ td {
   font-size: 150%;
   padding: 2px;
 }
+
+#restart {
+  color: black;
+}
