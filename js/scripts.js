@@ -3,7 +3,7 @@ function Game(randomWord) {
   this.wrongGuess = 0;
   this.usedLetters = [];
   this.rightGuess = this.word.length;
-  this.bodyParts = ['head', 'chest', 'left arm', 'right arm', 'hips', 'left leg', 'right leg'];
+  this.bodyParts = ['headhangman.html', 'torsohangman.html', 'leftarmhangman.html', 'rightarmhangman.html', 'hipshangman.html', 'leftleghangman.html', 'fullhangman.html'];
 }
 
 Game.prototype.hangedManPart = function() {
@@ -53,12 +53,10 @@ $(document).ready(function(){
     $('#displayWord').empty();
     targetWord = new Game(randomWord());
     console.log(targetWord);
-    $('#displayHangman').html('<object width="400" height="300" data="img/fullhangman.html"></object>');
+    $('#displayHangman').html('<object width="400" height="300" data="img/gallows.html"></object>');
     for (var i=0; i < targetWord.word.length; i ++) {
       $("#displayWord").append('<td id="space' + i + '"> ? </td>');
     }
-
-    // ADD RESET FOR PAGE ON SECOND CLICK?? SOMETHING??
   }); // END ACTION FROM PRESSING START/RESTART BUTTON
 
   $('#pickLetters').on('click', 'td', function() {
@@ -69,7 +67,7 @@ $(document).ready(function(){
     $("#userLetter").val('');
     var momentOfTruth = findLetter(guessedLetter, targetWord); // CHECK RANDOM WORD VS GUESSED LETTER
     if (momentOfTruth === false){
-      $("#displayHangman").append('<h4>' + targetWord.hangedManPart() + '</h4>');
+      $("#displayHangman").html('<object width="400" height="300" data="img/' + targetWord.hangedManPart() + '"></object>');
       targetWord.wrong();
     } else {
       momentOfTruth.forEach(function(moment) { // moment is a number equal to the index location of a letter
