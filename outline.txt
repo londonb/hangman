@@ -17,5 +17,5 @@ To do (day 2):
 **2) Actual hangman image!!!
 XXX3) Add modal for win/loss?
 **4) General layout cleanup
-5) Alternate word list
+**5) Alternate word list
 6) Clicking on a blank box - reaction????

@@ -23,3 +23,8 @@ td:hover {
   background-color: black;
   color: white;
 }
+
+.correctLetter {
+  color: purple;
+  font-size: 200%;
+}

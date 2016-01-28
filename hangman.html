@@ -13,9 +13,6 @@
       <div class="jumbotron">
         <h1 id="endGameDisplay">Play Hangman!</h1>
         <button type="button" class="btn btn-lg btn-danger"><a href="javascript:history.go(0)" id="restart">New Game</a></button>
-        <button type="button" id="animals" class="btn btn-lg choice">Animals</button>
-        <button type="button" id="codeterms" class="btn btn-lg choice">Coding Terms</button>
-        <button type="button" id="countries" class="btn btn-lg choice">Countries</button>
       </div>
 
       <div class="row">
@@ -28,7 +25,11 @@
         </div><!--END TOP LEFT COLUMN-->
         <div class="col-sm-8">
           <div class="displaybox">
-            <h2>Guess this word:</h2>
+            <h2>Pick A Category:</h2>
+            <button type="button" id="animals" class="btn btn-lg choice">Animals</button>
+            <button type="button" id="codeterms" class="btn btn-lg choice">Coding Terms</button>
+            <button type="button" id="countries" class="btn btn-lg choice">Countries</button>
+            <h2 id="displayCategory"></h2>
             <table class="table table-bordered" id="displayWord">
               <!-- <tbody id="displayWord">
 

@@ -59,8 +59,15 @@ $(document).ready(function(){
   $("button.choice").click(function() {
     $('#displayWord').empty();
     var userChoice = $(this).attr('id');
-    console.log(userChoice);
     targetWord = new Game(randomWord(userChoice));
+    if (userChoice === 'animals') {
+      $('#displayCategory').html('Guess this animal:');
+    } else if (userChoice === 'codeterms') {
+      $('#displayCategory').html('Guess this coding term:');
+    } else if (userChoice === 'countries') {
+      $('#displayCategory').html('Guess this country of the world:');
+    }
+
     console.log(targetWord);
     $('#displayHangman').html('<object width="400" height="300" data="img/gallows.html"></object>');
     for (var i=0; i < targetWord.word.length; i ++) {
@@ -80,7 +87,7 @@ $(document).ready(function(){
       targetWord.wrong();
     } else {
       momentOfTruth.forEach(function(moment) { // moment is a number equal to the index location of a letter
-        $('#space' + moment).html(targetWord.word[moment]);
+        $('#space' + moment).html('<span class="correctLetter">' + targetWord.word[moment] + '</span>');
         targetWord.correct();
       });
     } // END LETTER GUESSING FUNCTION
