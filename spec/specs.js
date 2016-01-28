@@ -4,7 +4,7 @@ describe('Game', function() {
     expect(testGame.word).to.equal("javascript");
     expect(testGame.wrongGuess).to.equal(0);
     expect(testGame.usedLetters).to.eql([]);
-    expect(testGame.bodyParts).to.eql(['head', 'chest', 'left arm', 'right arm', 'hips', 'left leg', 'right leg']);
+    expect(testGame.bodyParts).to.eql(['headhangman.html', 'torsohangman.html', 'leftarmhangman.html', 'rightarmhangman.html', 'hipshangman.html', 'leftleghangman.html', 'fullhangman.html']);
   });
 
   it('will increment the wrong guess counter', function() {
@@ -16,7 +16,7 @@ describe('Game', function() {
     var testGame = new Game("javascript");
     testGame.wrong();
     testGame.wrong();
-    expect(testGame.hangedManPart()).to.equal('left arm');
+    expect(testGame.hangedManPart()).to.equal('leftarmhangman.html');
   });
 
   it('will determine the number of letters that are remaining to disclose', function() {
@@ -53,6 +53,10 @@ describe('findLetter', function() {
 
 describe('randomWord', function() {
   it('will randomly select a word from a pre-set array and return it as a string', function() {
-    expect(randomWord()).to.be.a('string');
+    expect(randomWord("codeterms")).to.be.a('string');
+  });
+
+  it('will pick a specific array of words based on a category choice', function() {
+    expect(randomWord("animals")).to.eql(['bees', 'pigs', 'platypuses', 'gopher']);
   });
 });

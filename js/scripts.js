@@ -37,8 +37,14 @@ var findLetter = function(guess, selectedWord) {
   }
 }
 
-var randomWord = function(){
-  var possibleWords = ['markdown', 'block', 'javascript', 'cascading', 'responsive', 'looping', 'branching', 'manipulation', 'attributes', 'bootstrap'];
+var randomWord = function(category){
+  if (category === 'animals') {
+    var possibleWords = ['bees', 'pigs', 'platypuses', 'gopher'];
+    return possibleWords;
+  } else if (category === 'codeterms'){
+    var possibleWords = ['markdown', 'block', 'javascript', 'cascading', 'responsive', 'looping', 'branching', 'manipulation', 'attributes', 'bootstrap'];
+  }
+
   var randomNumber = Math.floor(Math.random() * (possibleWords.length));
   console.log(randomNumber, possibleWords[randomNumber]);
   return possibleWords[randomNumber];
@@ -71,7 +77,7 @@ $(document).ready(function(){
       targetWord.wrong();
     } else {
       momentOfTruth.forEach(function(moment) { // moment is a number equal to the index location of a letter
-        $('#space' + moment).html("<strong>" + targetWord.word[moment] + "</strong>");
+        $('#space' + moment).html(targetWord.word[moment]);
         targetWord.correct();
       });
     } // END LETTER GUESSING FUNCTION
@@ -79,14 +85,14 @@ $(document).ready(function(){
     console.log(targetWord.usedLetters);
 
     if (targetWord.rightGuess === 0) {
-      alert("You won");
+      $('#endGameDisplay').html("You Won! Try again?");
     }
 
     if (targetWord.wrongGuess >= 7) {
       for (var i = 0; i < targetWord.word.length; i ++ ){
         $('#space' + i).html("<strong>" + targetWord.word[i] + "</strong>");
       }
-      alert('GAME OVER!!!!'); //make more interesting
+      $('#endGameDisplay').html("You Lost! Try again?");
     } // CHECK TOTAL NUMBER OF GUESSES AND CALL END GAME ROUTINE IF =>7
   });
 }); //END DOCUMENT READY FUNCTION

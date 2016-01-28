@@ -8,8 +8,18 @@ td {
   text-align: center;
   font-size: 150%;
   padding: 2px;
+  font-weight: bold;
 }
 
 #restart {
   color: black;
+}
+
+ul#listLetters {
+  font-size: 170%;
+}
+
+td:hover {
+  background-color: black;
+  color: white;
 }

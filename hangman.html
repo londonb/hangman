@@ -11,7 +11,7 @@
   <body>
     <div class="container">
       <div class="jumbotron">
-        <h1>Play Hangman!</h1>
+        <h1 id="endGameDisplay">Play Hangman!</h1>
         <button type="button" class="btn btn-lg btn-danger"><a href="javascript:history.go(0)" id="restart">New Game</a></button>
         <button type="button" id="start" class="btn btn-lg">Start</button>
       </div>
@@ -19,7 +19,6 @@
       <div class="row">
         <div class="col-sm-4">
           <div class="displaybox" >
-            <h2>hangman image</h2>
             <div id="displayHangman">
 
             </div>
@@ -40,7 +39,7 @@
       <div class="row">
         <div class="col-sm-6">
           <div class="displaybox" id="pickLetters">
-            <h2>Choose letters here</h2>
+            <h2>Pick A Letter</h2>
             <table class="table table-bordered" id="chooseLetter">
               <tr id="vowels">
                 <td></td>
@@ -83,7 +82,7 @@
         </div><!--END bottom LEFT COLUMN-->
         <div class="col-sm-6">
           <div class="displaybox" id="showUsedLetters">
-            <h2>Prior guesses here</h2>
+            <h2>Previous Guesses:</h2>
             <ul id="listLetters">
 
             </ul>

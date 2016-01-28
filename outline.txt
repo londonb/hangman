@@ -14,8 +14,8 @@ XXX--5b) if form: Recognize if a letter has already been guessed - TBD: penalty?
 
 To do (day 2):
 **1) Reset letter grid and used letters list and hangman image after win/loss
-2) Actual hangman image!!!
-3) Add modal for win/loss?
-4) General layout cleanup
+**2) Actual hangman image!!!
+XXX3) Add modal for win/loss?
+**4) General layout cleanup
 5) Alternate word list
 6) Clicking on a blank box - reaction????
