@@ -39,10 +39,11 @@ var findLetter = function(guess, selectedWord) {
 
 var randomWord = function(category){
   if (category === 'animals') {
-    var possibleWords = ['bees', 'pigs', 'platypuses', 'gopher'];
-    return possibleWords;
+    var possibleWords = ['elephant', 'opossum', 'platypus', 'gopher', 'lynx', 'rhinoceros', 'jackrabbit', 'octopus', 'jellyfish', 'horse', 'llama', 'alpaca', 'manatee'];
   } else if (category === 'codeterms'){
     var possibleWords = ['markdown', 'block', 'javascript', 'cascading', 'responsive', 'looping', 'branching', 'manipulation', 'attributes', 'bootstrap'];
+  } else if (category === 'countries'){
+    var possibleWords = ['liechtenstein', 'australia', 'russia', 'uruguay', 'uzbekistan', 'venezuela', 'togo', 'haiti', 'tanzania', 'nicaragua', 'macedonia', 'albania', 'montenegro', 'mozambique', 'france', 'kyrgyzstan', 'iceland'];
   }
 
   var randomNumber = Math.floor(Math.random() * (possibleWords.length));
@@ -55,9 +56,11 @@ $(document).ready(function(){
   var targetword;
   var guessedLetter;
 
-  $("button#start").click(function() {
+  $("button.choice").click(function() {
     $('#displayWord').empty();
-    targetWord = new Game(randomWord());
+    var userChoice = $(this).attr('id');
+    console.log(userChoice);
+    targetWord = new Game(randomWord(userChoice));
     console.log(targetWord);
     $('#displayHangman').html('<object width="400" height="300" data="img/gallows.html"></object>');
     for (var i=0; i < targetWord.word.length; i ++) {

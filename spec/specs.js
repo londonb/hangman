@@ -57,6 +57,6 @@ describe('randomWord', function() {
   });
 
   it('will pick a specific array of words based on a category choice', function() {
-    expect(randomWord("animals")).to.eql(['bees', 'pigs', 'platypuses', 'gopher']);
+    expect(randomWord("animals")).to.be.a('string');
   });
 });
