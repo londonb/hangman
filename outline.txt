@@ -4,10 +4,18 @@
 3) Displays an empty hanging tree
 4) Displays a hangman image that increases with each wrong guess (7 body parts)
 **5) Allows the player to select from the alphabet - grid or form
---5b) if form: Recognize if a letter has already been guessed - TBD: penalty? - also check for unexpected input (ie multiple letters)
---5c) if grid: identifies correct letter to apply to remaining tasks
+XXX--5b) if form: Recognize if a letter has already been guessed - TBD: penalty? - also check for unexpected input (ie multiple letters)
+**--5c) if grid: identifies correct letter to apply to remaining tasks
 **6) Find occurrences of player's letter in the random word;
 **--6b)if it's there, replace blanks with the letter and if not, move letter to used field and add body part to hanged man
 **7) Increment counter for each wrong guess
 **--7b) display "You lost" message after 7 -- potentially modal
 **8) Button to start again (generate new word)
+
+To do (day 2):
+1) Reset letter grid and used letters list and hangman image after win/loss
+2) Actual hangman image!!!
+3) Add modal for win/loss?
+4) General layout cleanup
+5) Alternate word list
+6) Clicking on a blank box - reaction????

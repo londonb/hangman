@@ -1,13 +1,10 @@
-.displaybox {
+/*.displaybox {
   border: 1px;
   border-style: solid;
   border-color: red;
-}
+}*/
 
 td {
-  border: 1px;
-  border-style: solid;
-  border-color: purple;
   text-align: center;
   font-size: 150%;
   padding: 2px;
