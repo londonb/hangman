@@ -1,23 +1,17 @@
 # Hangman
 
-#### Play a simple game of Hangman, January 27, 2016
+#### Play a simple game of Hangman, January 27-28, 2016
 
 #### By Brad London and Abby Rolling
 
 ## Description
 
-This webpage allows the user to play a game of hangman against a set short list of words.
-
-## Setup/Installation Requirements
-
-Two branches exist, one using a form for input and one using a list of letters from which to choose.
+This webpage allows the user to play a game of hangman against a word from one of three categories.
 
 ## Known Bugs
 
-* Minimalist front end interface
-* Form version does not have wide error handling
-* New game/refresh conditions are inconsistent
-* Hangman is not actually a man
+* Clicking on the space where a letter once existed will test ' ' against the chosen word.
+* The user is allowed to keep clicking on letters after winning or losing the game
 
 ## Technologies Used
 
